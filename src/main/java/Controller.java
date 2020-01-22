@@ -1,4 +1,5 @@
 import calc.Gewichte;
+import calc.Zeit;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -68,7 +69,7 @@ public class Controller {
         button_cs.setDisable(false);
         choice_first.setDisable(true);
         button_cf.setDisable(true);
-        textfield_value.setPromptText("Eingabe in "+choice_second.getValue());
+        textfield_value.setPromptText("Eingabe in "+choice_first.getValue());
 
     }
 
@@ -120,16 +121,18 @@ public class Controller {
                     break;
                 case "Gewichte":
                     Gewichte a = new Gewichte(val1,val2,Double.parseDouble(val3));
-                    label_ergebnis.setText(a.getErgebnis().toString());
+                    label_ergebnis.setText(a.getErgebnis().toString()+" "+val2);
                     break;
                 case "Zeit":
-                    //Wie Gewichte
+                    Zeit b = new Zeit(val1,val2,Double.parseDouble(val3));
+                    label_ergebnis.setText(b.getErgebnis().toString()+" "+val2);
                     break;
             }
         } else {
             textfield_value.setText("");
         }
         textfield_value.setText("");
+        textfield_value.setPromptText("");
         choice_init.setDisable(false);
         button_ci.setDisable(false);
 

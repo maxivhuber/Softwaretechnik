@@ -25,14 +25,14 @@ public class Gewichte {
                 setValue(value * 1000);
                 break;
             case "g":
-                setValue(value);
+                break;
             case "mg":
                 setValue(value / 1000);
                 break;
         }
     }
     private void calculator() { //Wir von gramm aus um
-        switch (start) {
+        switch (ziel) {
             case "t":
                 setErgebnis(value / 1000000);
                 break;
@@ -56,8 +56,8 @@ public class Gewichte {
     public void setErgebnis(Double ergebnis) {
         this.ergebnis = ergebnis;
     }
+
     public Double getErgebnis() {
         return ergebnis;
     }
-
 }
