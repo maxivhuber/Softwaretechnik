@@ -14,11 +14,36 @@ public class Zeit {
     Double value;
     Double ergebnis;
 
-    private void converter(double value){
-
+    private void converter(double value){ //Basis min
+        switch (start) {
+            case "m":
+                setValue(((value * 30)*24)*60);
+                break;
+            case "d":
+                setValue((value * 24)*60);
+                break;
+            case "h":
+                setValue(value*60);
+                break;
+            case "min":
+                break;
+        }
     }
 
     private void calculator() {
+        switch (ziel) {
+            case "m":
+            setErgebnis(((value / 60)/24)/30);
+                break;
+            case "d":
+                setErgebnis((value / 60)/24);
+                break;
+            case "h":
+               setErgebnis(value / 60);
+                break;
+            case "min": setErgebnis(value);
+                break;
+        }
 
     }
 
