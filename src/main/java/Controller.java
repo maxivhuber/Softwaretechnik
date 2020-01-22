@@ -1,3 +1,4 @@
+import calc.Gewichte;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -107,13 +108,35 @@ public class Controller {
         if (checkInput(textfield_value.getText().trim())) {
             textfield_value.setDisable(true);
             button_calc.setDisable(true);
+
+            String option = choice_init.getValue();
+            String val1 = choice_first.getValue();
+            String val2 = choice_second.getValue();
+            String val3 = textfield_value.getText();
+
+            switch (option) {
+                case "Währung":
+                    //Wie Gewichte
+                    break;
+                case "Gewichte":
+                    Gewichte a = new Gewichte(val1,val2,Double.parseDouble(val3));
+                    label_ergebnis.setText(a.getErgebnis().toString());
+                    break;
+                case "Zeit":
+                    //Wie Gewichte
+                    break;
+            }
         } else {
             textfield_value.setText("");
         }
+        textfield_value.setText("");
+        choice_init.setDisable(false);
+        button_ci.setDisable(false);
 
     }
 
     public void update() {
+
 
     }
 
