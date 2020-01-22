@@ -34,3 +34,5 @@ build/classes/java/main/calc/RestController.class
 build/classes/java/main/calc/Währung.class
 build/classes/java/main/calc/Zeit.class
 build/resources/main/währungen.json
+.idea/uiDesigner.xml
+build/classes/java/main/calc/Wrung.class
