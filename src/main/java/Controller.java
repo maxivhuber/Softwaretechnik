@@ -41,6 +41,9 @@ public class Controller {
     private Button button_calc;
 
     @FXML
+    private Button button_clear;
+
+    @FXML
     private Label label_ergebnis;
 
     public void selectEinheit() {
@@ -105,11 +108,10 @@ public class Controller {
 
     }
 
-    public void calc() {
+    public void calculateResult() {
         if (checkInput(textfield_value.getText().trim())) {
             textfield_value.setDisable(true);
             button_calc.setDisable(true);
-
             String option = choice_init.getValue();
             String val1 = choice_first.getValue();
             String val2 = choice_second.getValue();
@@ -118,24 +120,23 @@ public class Controller {
             switch (option) {
                 case "Währung":
                     //Wie Gewichte
+                    clear();
                     break;
                 case "Gewichte":
                     Gewichte a = new Gewichte(val1,val2,Double.parseDouble(val3));
                     label_ergebnis.setText(a.getErgebnis().toString()+" "+val2);
+                    clear();
                     break;
                 case "Zeit":
                     Zeit b = new Zeit(val1,val2,Double.parseDouble(val3));
                     label_ergebnis.setText(b.getErgebnis().toString()+" "+val2);
+                    clear();
                     break;
             }
         } else {
             textfield_value.setText("");
-        }
-        textfield_value.setText("");
-        textfield_value.setPromptText("");
-        choice_init.setDisable(false);
-        button_ci.setDisable(false);
 
+        }
     }
 
     public void update() {
@@ -153,6 +154,13 @@ public class Controller {
             return false;
         }
         return true;
+    }
+
+    public void clear(){
+        textfield_value.setText("");
+        textfield_value.setPromptText("");
+        choice_init.setDisable(false);
+        button_ci.setDisable(false);
     }
 }
 
