@@ -2,7 +2,6 @@ package calc;
 
 import Update.JsonClasses.Update;
 import com.google.gson.Gson;
-
 import static Update.RestController.readData;
 
 public class Waerung {
@@ -29,16 +28,41 @@ public class Waerung {
             case "USD":
                 break;
             case "EUR":
-                setValue(value * Double.parseDouble(data.getRates().getEUR()));
+                double a = (Double.parseDouble(data.getRates().getEUR())*100);
+                a = Math.abs(a-100);
+                a += 100;
+                setValue((value * a) / 100);
                 break;
             case "JPY":
+                double b = (Double.parseDouble(data.getRates().getJPY())*100);
+                b = Math.abs(b-100);
+                b += 100;
+                setValue((value * b) / 100);
                 break;
             case "DKK":
-
+                double c = (Double.parseDouble(data.getRates().getDKK())*100);
+                c = Math.abs(c-100);
+                c += 100;
+                setValue((value * c) / 100);
                 break;
         }
     }
+
     private void calculator(){
+        switch (ziel) {
+            case "USD":
+                setErgebnis(value);
+                break;
+            case "EUR":
+                setErgebnis(value * Double.parseDouble(data.getRates().getEUR()));
+                break;
+            case "JPY":
+                setErgebnis(value * Double.parseDouble(data.getRates().getJPY()));
+                break;
+            case "DKK":
+                setErgebnis(value * Double.parseDouble(data.getRates().getDKK()));
+                break;
+        }
 
     }
 

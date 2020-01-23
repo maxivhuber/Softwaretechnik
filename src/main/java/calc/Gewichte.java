@@ -16,7 +16,6 @@ public class Gewichte {
     Double value;
     Double ergebnis;
 
-
     private void converter(double value){   //Umwandeln in gramm
         switch (start) {
             case "t":
@@ -32,6 +31,7 @@ public class Gewichte {
                 break;
         }
     }
+
     private void calculator() { //Wir von gramm aus um
         switch (ziel) {
             case "t":
@@ -48,7 +48,6 @@ public class Gewichte {
                 break;
         }
     }
-
 
     public void setValue(Double value) {
         this.value = value;
