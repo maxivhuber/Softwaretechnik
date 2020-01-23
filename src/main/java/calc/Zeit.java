@@ -1,6 +1,7 @@
 package calc;
 
-public class Zeit {
+public class Zeit extends Einheit {
+
     public Zeit(String start,String ziel,Double value){
         this.start =start;
         this.ziel = ziel;
@@ -10,12 +11,9 @@ public class Zeit {
         calculator();
     }
 
-    private String start;
     private String ziel;
-    private Double value;
-    private Double ergebnis;
 
-    private void converter(double value){ //Basis min
+    public void converter(double value){ //Basis min
         switch (start) {
             case "m":
                 setValue(((value * 30)*24)*60);
@@ -31,7 +29,7 @@ public class Zeit {
         }
     }
 
-    private void calculator() {
+    public void calculator() {
         switch (ziel) {
             case "m":
             setErgebnis(((value / 60)/24)/30);
@@ -48,15 +46,4 @@ public class Zeit {
 
     }
 
-    public void setValue(Double value) {
-        this.value = value;
-    }
-
-    public Double getErgebnis() {
-        return ergebnis;
-    }
-
-    public void setErgebnis(Double ergebnis) {
-        this.ergebnis = ergebnis;
-    }
 }

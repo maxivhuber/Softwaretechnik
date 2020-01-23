@@ -119,7 +119,7 @@ public class Controller {
         }
     }
 
-    public boolean checkInput(String value) {
+    private boolean checkInput(String value) {
         if (value.isEmpty()) {
             return false;
         }

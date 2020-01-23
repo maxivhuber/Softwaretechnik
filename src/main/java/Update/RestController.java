@@ -1,13 +1,10 @@
 package Update;
 
-import Update.JsonClasses.Update;
 import com.google.gson.Gson;
-
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import Update.JsonClasses.*;
 
 public class RestController {
     

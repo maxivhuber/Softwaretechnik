@@ -1,6 +1,6 @@
 package calc;
 
-public class Gewichte {
+public class Gewichte extends Einheit {
 
     public Gewichte(String start,String ziel,Double value){
     this.start =start;
@@ -11,12 +11,9 @@ public class Gewichte {
     calculator();
     }
 
-    private String start;
     private String ziel;
-    private Double value;
-    private Double ergebnis;
 
-    private void converter(double value){   //Umwandeln in gramm
+    public void converter(double value){   //Umwandeln in gramm
         switch (start) {
             case "t":
                 setValue(value * 1000000);
@@ -32,7 +29,7 @@ public class Gewichte {
         }
     }
 
-    private void calculator() { //Wir von gramm aus um
+    public void calculator() { //Wir von gramm aus um
         switch (ziel) {
             case "t":
                 setErgebnis(value / 1000000);
@@ -49,15 +46,5 @@ public class Gewichte {
         }
     }
 
-    public void setValue(Double value) {
-        this.value = value;
-    }
 
-    public void setErgebnis(Double ergebnis) {
-        this.ergebnis = ergebnis;
-    }
-
-    public Double getErgebnis() {
-        return ergebnis;
-    }
 }
