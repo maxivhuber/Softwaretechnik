@@ -15,8 +15,8 @@ public class Controller {
 
 
     public void initialize() {
-        choice_init.getItems().addAll("Währung", "Gewichte", "Zeit");
-        choice_init.setValue("Währung");
+        choice_init.getItems().addAll("Waehrung", "Gewichte", "Zeit");
+        choice_init.setValue("Waehrung");
     }
 
     @FXML
