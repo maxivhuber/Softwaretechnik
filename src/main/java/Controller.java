@@ -1,4 +1,5 @@
 import calc.Gewichte;
+import calc.Waerung;
 import calc.Zeit;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -97,16 +98,18 @@ public class Controller {
             switch (option) {
                 case "Währung":
                     checkAge();
-                    clear();
-                    break;
-                case "Gewichte":
-                    Gewichte a = new Gewichte(val1, val2, Double.parseDouble(val3));
+                    Waerung a = new Waerung(val1, val2, Double.parseDouble(val3));
                     label_ergebnis.setText(a.getErgebnis().toString() + " " + val2);
                     clear();
                     break;
-                case "Zeit":
-                    Zeit b = new Zeit(val1, val2, Double.parseDouble(val3));
+                case "Gewichte":
+                    Gewichte b = new Gewichte(val1, val2, Double.parseDouble(val3));
                     label_ergebnis.setText(b.getErgebnis().toString() + " " + val2);
+                    clear();
+                    break;
+                case "Zeit":
+                    Zeit c = new Zeit(val1, val2, Double.parseDouble(val3));
+                    label_ergebnis.setText(c.getErgebnis().toString() + " " + val2);
                     clear();
                     break;
             }

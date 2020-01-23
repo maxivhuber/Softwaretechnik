@@ -5,6 +5,7 @@ public class Zeit {
         this.start =start;
         this.ziel = ziel;
         this.value =value;
+        this.ergebnis = 0.0;
         converter(value);
         calculator();
     }
