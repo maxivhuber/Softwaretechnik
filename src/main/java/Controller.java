@@ -1,6 +1,7 @@
 import calc.Gewichte;
 import calc.Waerung;
 import calc.Zeit;
+import com.google.gson.internal.JavaVersion;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -17,6 +18,7 @@ public class Controller {
     public void initialize() {
         choice_init.getItems().addAll("Waehrung", "Gewichte", "Zeit");
         choice_init.setValue("Waehrung");
+        System.out.println(System.getProperty("javafx.version"));
     }
 
     @FXML

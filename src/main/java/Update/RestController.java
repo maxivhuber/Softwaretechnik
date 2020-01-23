@@ -7,7 +7,7 @@ import java.net.URL;
 import Update.JsonClasses.*;
 
 public class RestController {
-    
+
     public static void httpRequest() {
 
         try {

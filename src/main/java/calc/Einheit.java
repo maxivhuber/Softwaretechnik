@@ -5,10 +5,12 @@ public abstract class Einheit {
     public String start;
     public Double value;
     public Double ergebnis;
+    public String ziel;
 
+
+    public abstract void converter();
 
     public abstract void calculator();
-
 
     public void setValue(Double value) {
         this.value = value;

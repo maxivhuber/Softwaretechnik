@@ -7,13 +7,11 @@ public class Zeit extends Einheit {
         this.ziel = ziel;
         this.value =value;
         this.ergebnis = 0.0;
-        converter(value);
+        converter();
         calculator();
     }
 
-    private String ziel;
-
-    public void converter(double value){ //Basis min
+    public void converter(){ //Basis min
         switch (start) {
             case "m":
                 setValue(((value * 30)*24)*60);

@@ -2,18 +2,17 @@ package calc;
 
 public class Gewichte extends Einheit {
 
-    public Gewichte(String start,String ziel,Double value){
-    this.start =start;
-    this.ziel = ziel;
-    this.value =value;
-    this.ergebnis = 0.0;
-    converter(value);
-    calculator();
+    public Gewichte(String start, String ziel, Double value) {
+        this.start = start;
+        this.ziel = ziel;
+        this.value = value;
+        this.ergebnis = 0.0;
+        converter();
+        calculator();
     }
 
-    private String ziel;
-
-    public void converter(double value){   //Umwandeln in gramm
+    @Override
+    public void converter() {   //Umwandeln in gramm
         switch (start) {
             case "t":
                 setValue(value * 1000000);
@@ -28,6 +27,7 @@ public class Gewichte extends Einheit {
                 break;
         }
     }
+
 
     public void calculator() { //Wir von gramm aus um
         switch (ziel) {
