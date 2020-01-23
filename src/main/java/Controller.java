@@ -8,6 +8,8 @@ import javafx.scene.control.TextField;
 
 import java.util.Arrays;
 
+import static Update.RestController.checkAge;
+
 public class Controller {
 
 
@@ -55,7 +57,7 @@ public class Controller {
 
         switch (option) {
             case "Währung":
-                genWährung();
+                genWaehrung();
                 break;
             case "Gewichte":
                 genGewichte();
@@ -72,7 +74,7 @@ public class Controller {
         button_cs.setDisable(false);
         choice_first.setDisable(true);
         button_cf.setDisable(true);
-        textfield_value.setPromptText("Eingabe in "+choice_first.getValue());
+        textfield_value.setPromptText("Eingabe in " + choice_first.getValue());
 
     }
 
@@ -81,31 +83,6 @@ public class Controller {
         button_cs.setDisable(true);
         textfield_value.setDisable(false);
         button_calc.setDisable(false);
-    }
-
-    private void genWährung() {
-        String währung[] = {"USD", "EUR", "JPY", "DKK"};
-        choice_first.getItems().setAll(Arrays.asList(währung));
-        choice_second.getItems().setAll(Arrays.asList(währung));
-        choice_first.setValue("USD");
-        choice_second.setValue("USD");
-    }
-
-    private void genGewichte() {
-        String gewichte[] = {"t", "kg", "g", "mg"};
-        choice_first.getItems().setAll(Arrays.asList(gewichte));
-        choice_second.getItems().setAll(Arrays.asList(gewichte));
-        choice_first.setValue("t");
-        choice_second.setValue("t");
-    }
-
-    private void genZeit() {
-        String zeiten[] = {"m", "d", "h", "min"};
-        choice_first.getItems().setAll(Arrays.asList(zeiten));
-        choice_second.getItems().setAll(Arrays.asList(zeiten));
-        choice_first.setValue("m");
-        choice_second.setValue("m");
-
     }
 
     public void calculateResult() {
@@ -119,17 +96,17 @@ public class Controller {
 
             switch (option) {
                 case "Währung":
-                    //Wie Gewichte
+                    checkAge();
                     clear();
                     break;
                 case "Gewichte":
-                    Gewichte a = new Gewichte(val1,val2,Double.parseDouble(val3));
-                    label_ergebnis.setText(a.getErgebnis().toString()+" "+val2);
+                    Gewichte a = new Gewichte(val1, val2, Double.parseDouble(val3));
+                    label_ergebnis.setText(a.getErgebnis().toString() + " " + val2);
                     clear();
                     break;
                 case "Zeit":
-                    Zeit b = new Zeit(val1,val2,Double.parseDouble(val3));
-                    label_ergebnis.setText(b.getErgebnis().toString()+" "+val2);
+                    Zeit b = new Zeit(val1, val2, Double.parseDouble(val3));
+                    label_ergebnis.setText(b.getErgebnis().toString() + " " + val2);
                     clear();
                     break;
             }
@@ -137,11 +114,6 @@ public class Controller {
             textfield_value.setText("");
 
         }
-    }
-
-    public void update() {
-
-
     }
 
     public boolean checkInput(String value) {
@@ -156,11 +128,44 @@ public class Controller {
         return true;
     }
 
-    public void clear(){
+    public void clear() {
         textfield_value.setText("");
         textfield_value.setPromptText("");
         choice_init.setDisable(false);
         button_ci.setDisable(false);
+        choice_first.setDisable(true);
+        choice_first.getItems().setAll("");
+        choice_second.setDisable(true);
+        choice_second.getItems().setAll("");
+        button_cf.setDisable(true);
+        button_cs.setDisable(true);
     }
+
+    private void genWaehrung() {
+        String[] waehrung = {"USD", "EUR", "JPY", "DKK"};
+        choice_first.getItems().setAll(Arrays.asList(waehrung));
+        choice_second.getItems().setAll(Arrays.asList(waehrung));
+        choice_first.setValue("USD");
+        choice_second.setValue("USD");
+    }
+
+    private void genGewichte() {
+        String[] gewichte = {"t", "kg", "g", "mg"};
+        choice_first.getItems().setAll(Arrays.asList(gewichte));
+        choice_second.getItems().setAll(Arrays.asList(gewichte));
+        choice_first.setValue("t");
+        choice_second.setValue("t");
+    }
+
+    private void genZeit() {
+        String[] zeiten = {"m", "d", "h", "min"};
+        choice_first.getItems().setAll(Arrays.asList(zeiten));
+        choice_second.getItems().setAll(Arrays.asList(zeiten));
+        choice_first.setValue("m");
+        choice_second.setValue("m");
+
+    }
+
+
 }
 

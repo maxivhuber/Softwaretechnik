@@ -9,6 +9,7 @@ public class Update {
     private String time_last_updated;
     private Rates rates;
 
+    public String getBase() {
         return base;
     }
 

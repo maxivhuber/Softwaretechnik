@@ -1,5 +1,8 @@
 package Update;
 
+import Update.JsonClasses.Update;
+import com.google.gson.Gson;
+
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
 import java.net.URL;
@@ -44,7 +47,16 @@ public class RestController {
         return builder.toString();
     }
 
-    public static void checkAge(){
+    public static void checkAge() {
+        try {
+            String data = readData();
+            Update update = new Gson().fromJson(data, Update.class);
+            String time = update.getTime_last_updated();
+            System.out.println(time);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Something broke during update!");
+        }
 
     }
 }
