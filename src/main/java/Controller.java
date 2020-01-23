@@ -57,7 +57,7 @@ public class Controller {
         button_ci.setDisable(true);
 
         switch (option) {
-            case "Währung":
+            case "Waehrung":
                 genWaehrung();
                 break;
             case "Gewichte":
@@ -96,7 +96,7 @@ public class Controller {
             String val3 = textfield_value.getText();
 
             switch (option) {
-                case "Währung":
+                case "Waehrung":
                     checkAge();
                     Waerung a = new Waerung(val1, val2, Double.parseDouble(val3));
                     label_ergebnis.setText(a.getErgebnis().toString() + " " + val2);

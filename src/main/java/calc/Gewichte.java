@@ -11,10 +11,10 @@ public class Gewichte {
     calculator();
     }
 
-    String start;
-    String ziel;
-    Double value;
-    Double ergebnis;
+    private String start;
+    private String ziel;
+    private Double value;
+    private Double ergebnis;
 
     private void converter(double value){   //Umwandeln in gramm
         switch (start) {

@@ -10,10 +10,10 @@ public class Zeit {
         calculator();
     }
 
-    String start;
-    String ziel;
-    Double value;
-    Double ergebnis;
+    private String start;
+    private String ziel;
+    private Double value;
+    private Double ergebnis;
 
     private void converter(double value){ //Basis min
         switch (start) {
