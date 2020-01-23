@@ -8,6 +8,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 import static Update.RestController.checkAge;
@@ -18,7 +19,6 @@ public class Controller {
     public void initialize() {
         choice_init.getItems().addAll("Waehrung", "Gewichte", "Zeit");
         choice_init.setValue("Waehrung");
-        System.out.println(System.getProperty("javafx.version"));
     }
 
     @FXML
@@ -101,16 +101,22 @@ public class Controller {
                 case "Waehrung":
                     checkAge();
                     Waerung a = new Waerung(val1, val2, Double.parseDouble(val3));
-                    label_ergebnis.setText(a.getErgebnis().toString() + " " + val2);
+                    DecimalFormat df = new DecimalFormat("#.####");
+                    String formatted = df.format(a.getErgebnis());
+                    label_ergebnis.setText(formatted + " " + val2);
                     clear();
                     break;
                 case "Gewichte":
                     Gewichte b = new Gewichte(val1, val2, Double.parseDouble(val3));
+                    DecimalFormat df1 = new DecimalFormat("#.##");
+                    String formatted1 = df1.format(b.getErgebnis());
                     label_ergebnis.setText(b.getErgebnis().toString() + " " + val2);
                     clear();
                     break;
                 case "Zeit":
                     Zeit c = new Zeit(val1, val2, Double.parseDouble(val3));
+                    DecimalFormat df2 = new DecimalFormat("#.##");
+                    String formatted2 = df2.format(c.getErgebnis());
                     label_ergebnis.setText(c.getErgebnis().toString() + " " + val2);
                     clear();
                     break;

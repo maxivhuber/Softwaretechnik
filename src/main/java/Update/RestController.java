@@ -4,9 +4,17 @@ import com.google.gson.Gson;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
 import java.net.URL;
+import java.text.DecimalFormat;
+
 import Update.JsonClasses.*;
 
 public class RestController {
+
+    public static void main(String[] args) {
+        DecimalFormat df = new DecimalFormat("#.##");
+        String formatted = df.format(2.456345);
+        System.out.println(formatted);  //prints 2.46
+    }
 
     public static void httpRequest() {
 
