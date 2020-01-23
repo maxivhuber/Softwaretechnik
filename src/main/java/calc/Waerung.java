@@ -11,7 +11,7 @@ public class Waerung {
         this.ergebnis = 0.0;
         String json = readData();
         this.data = new Gson().fromJson(json,Update.class);
-        converter(value);
+        calculator(value);
     }
 
     private String start;
@@ -19,7 +19,7 @@ public class Waerung {
     private Double ergebnis;
     private Update data;
 
-    private void converter(Double value) {
+    private void calculator(Double value) {
 
         switch (start) {
             case "USD":
