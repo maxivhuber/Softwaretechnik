@@ -24,6 +24,7 @@ public class Waerung extends Einheit {
         switch (start) {
             case "USD":
                 setValue(value);
+                break;
             case "EUR":
                 double a = (1 / Double.parseDouble(data.getRates().getEUR()));
                 setValue(value * a);
@@ -44,6 +45,7 @@ public class Waerung extends Einheit {
         switch (ziel) {
             case "USD":
                 setErgebnis(value);
+                break;
             case "EUR":
                 setErgebnis(value * Double.parseDouble(data.getRates().getEUR()));
                 break;

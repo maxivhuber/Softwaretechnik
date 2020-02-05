@@ -10,12 +10,6 @@ import Update.JsonClasses.*;
 
 public class RestController {
 
-    public static void main(String[] args) {
-        DecimalFormat df = new DecimalFormat("#.##");
-        String formatted = df.format(2.456345);
-        System.out.println(formatted);  //prints 2.46
-    }
-
     public static void httpRequest() {
 
         try {
@@ -34,7 +28,7 @@ public class RestController {
                 }
                 in.close();
 
-                BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/Währungen.json", false));
+                BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/waehrungen.json", false));
                 writer.append(response.toString());
                 writer.close();
             }
@@ -47,7 +41,7 @@ public class RestController {
     public static String readData() {
 
         try {
-            String file = "src/main/resources/Währungen.json";
+            String file = "src/main/resources/waehrungen.json";
             BufferedReader reader = new BufferedReader(new FileReader(file));
             StringBuilder builder = new StringBuilder();
             String currentLine = reader.readLine();
@@ -72,11 +66,12 @@ public class RestController {
         long daten_millis = daten * 1000;
         long now = System.currentTimeMillis();
 
-        if (now - daten_millis > 7200000) { //7200000 == 2 hours
+        if (now - daten_millis > 43200000) { //7.200.000 == 2 hours | 14.400.000 == 4 hours ...
             httpRequest();
             System.out.println("requested new data");
         } else {
             System.out.println("Daten aktuell");
         }
     }
+
 }

@@ -11,7 +11,7 @@ public class Gewichte extends Einheit {
         calculator();
     }
 
-    @Override
+
     public void converter() {   //Umwandeln in gramm
         switch (start) {
             case "t":
@@ -27,7 +27,6 @@ public class Gewichte extends Einheit {
                 break;
         }
     }
-
 
     public void calculator() { //Wir von gramm aus um
         switch (ziel) {
@@ -45,6 +44,5 @@ public class Gewichte extends Einheit {
                 break;
         }
     }
-
 
 }

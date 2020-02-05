@@ -1,20 +1,16 @@
 import calc.Gewichte;
 import calc.Waerung;
 import calc.Zeit;
-import com.google.gson.internal.JavaVersion;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
 import java.text.DecimalFormat;
 import java.util.Arrays;
-
 import static Update.RestController.checkAge;
 
 public class Controller {
-
 
     public void initialize() {
         choice_init.getItems().addAll("Waehrung", "Gewichte", "Zeit");
